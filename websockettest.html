@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script>
+        var socket;
+        function WebSocketStart() {
+            socket = new WebSocket('wss://test.442.chat:8443/?chatroomid=3808');
+            // socket.addEventListener('open', function (event) {
+            //     // str = new Blob;
+            //     // str.data = 'aaaa';
+            //     socket.send('aaaa');
+            // });
+        }
+        function hello() {
+            // socket.addEventListener('open', function (event) {
+            obj = document.getElementById("a").value;
+            socket.send(obj);
+            // });
+        }
+        function maxtest() {
+            obj = '';
+            v = document.getElementById("b").value;
+            for (i = 0; i < v; i++) {
+                obj += 'a';
+            }
+            socket.send(obj);
+        }
+        // socket.addEventListener('open', function (event) {
+        //     socket.send('Hello Server!');
+        // });
+    </script>
+</head>
+
+<body>
+    <button onclick="WebSocketStart()">webSocket start</button><br>
+    <input id="a" value="aaa">
+    <button onclick="hello()">Hello Server</button><br>
+    <input id="b" value="127" type="number">
+    <button onclick="maxtest()">test</button>
+</body>
+
+</html>
